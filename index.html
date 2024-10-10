@@ -95,6 +95,51 @@
     .footer a {
       color: #640429;
     }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .navbar.dark-mode {
+      background-color: #1e1e1e;
+      border-bottom-color: #444;
+    }
+
+    .navbar-nav > li > a.dark-mode {
+      color: #f0f0f0 !important;
+    }
+
+    .navbar-nav > li > a.dark-mode:hover {
+      background-color: #444 !important;
+      color: #2d54ff !important;
+    }
+
+    .dark-mode .service-box {
+      background-color: #1e1e1e;
+      border: 1px solid #444;
+    }
+
+    .dark-mode .footer {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    .dark-mode-btn {
+      background-color: #640429;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dark-mode-btn:hover {
+      background-color: #2d54ff;
+      color: #fff;
+    }
+  </style>
+</head>
   </style>
 </head>
 <body>
@@ -122,6 +167,7 @@
               <li><a href="services.html">Services</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button id="darkModeToggle" class="dark-mode-btn navbar-right">Dark Mode</button>
           </div>
         </div>
     </nav>
@@ -178,5 +224,18 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  // JavaScript for Dark Mode Toggle
+  document.getElementById('darkModeToggle').addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    const elements = document.querySelectorAll('.navbar, .navbar-nav > li > a, .footer, .service-box');
+    elements.forEach(element => {
+      element.classList.toggle('dark-mode');
+    });
+  });
+</script>
+</body>
+
+</html>
 </body>
 </html>
